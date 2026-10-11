@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Aerlume",
+    "slug": "aerlume",
+    "scheme": "aerlume",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aerlume.app"
+    },
+    "android": {
+      "package": "com.aerlume.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B1E3D"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.aerlume.app",
+          "enableGooglePay": true
+        }
+      ]
+    ],
+    "extra": {
+      "router": {}
+    }
+  }
+}

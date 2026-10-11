@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-indigo-900 font-sans antialiased transition-colors duration-150;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-indigo-900;
+  }
+  /* Visible keyboard focus everywhere — accessibility floor, not optional. */
+  :focus-visible {
+    outline: 2px solid theme('colors.gold.DEFAULT');
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: theme('colors.gold.200');
+  }
+  /* Tabular numerals for prices, flight times, and dates so columns align. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Dark mode ─────────────────────────────────────────────────────
+   * Toggle, persistence, shared chrome (navbar, footer, cards, buttons,
+   * inputs, badges), AND every page's inline text/background/border
+   * color utility (text-indigo-900, text-muted, bg-ivory, bg-surface,
+   * bg-indigo-50/100, border-border, text-border, text-indigo-600) have
+   * a dark: companion — applied systematically across every page and
+   * component file, not just shared chrome. See the README for the
+   * handful of self-consistent exceptions left untouched on purpose
+   * (e.g. bg-indigo-900 paired with text-ivory, which doesn't invert).
+   */
+  .dark body {
+    @apply bg-indigo-950 text-ivory;
+  }
+  .dark .card {
+    @apply border-indigo-800 bg-indigo-900;
+  }
+  .dark .input {
+    @apply border-indigo-700 bg-indigo-900 text-ivory placeholder:text-indigo-300;
+  }
+  .dark .btn-outline {
+    @apply border-indigo-600 text-ivory hover:bg-indigo-800;
+  }
+  .dark .btn-ghost {
+    @apply text-indigo-200 hover:bg-indigo-800;
+  }
+  .dark .label {
+    @apply text-indigo-300;
+  }
+  /* Headings/body text that rely on the base h1-h4 rule or plain <p> tags
+     without an explicit color utility (rather than an inline text-indigo-900
+     class, which the component-level dark: fixes above already cover). */
+  .dark h1, .dark h2, .dark h3, .dark h4 {
+    @apply text-ivory;
+  }
+  .dark .input:disabled {
+    @apply bg-indigo-800 text-indigo-400;
+  }
+}
+
+@layer components {
+  /* The horizon-line signature element: a thin gold rule beneath hero
+     headlines and as a section divider. */
+  .horizon-rule {
+    @apply h-[2px] w-16 bg-horizon;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded font-sans font-medium
+           transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none
+           focus-visible:outline-2 focus-visible:outline-gold;
+  }
+  .btn-primary {
+    @apply btn bg-indigo-900 text-ivory hover:bg-indigo-800 px-5 py-2.5 text-sm;
+  }
+  .btn-accent {
+    @apply btn bg-gold text-indigo-950 hover:bg-gold-500 px-5 py-2.5 text-sm font-semibold;
+  }
+  .btn-outline {
+    @apply btn border border-indigo-900 text-indigo-900 hover:bg-indigo-50 px-5 py-2.5 text-sm;
+  }
+  .btn-ghost {
+    @apply btn text-indigo-900 hover:bg-indigo-50 px-4 py-2 text-sm;
+  }
+
+  .input {
+    @apply w-full rounded border border-border bg-surface px-3.5 py-2.5 text-sm text-indigo-900
+           placeholder:text-muted/70 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500
+           disabled:bg-ivory disabled:text-muted;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-muted;
+  }
+
+  .card {
+    @apply rounded-lg border border-border bg-surface shadow-card;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .badge-success { @apply badge bg-success/10 text-success; }
+  .badge-warning { @apply badge bg-warning/10 text-warning; }
+  .badge-error   { @apply badge bg-error/10 text-error; }
+  .badge-info    { @apply badge bg-info/10 text-info; }
+  .badge-neutral { @apply badge bg-indigo-50 text-indigo-700 dark:bg-indigo-800 dark:text-indigo-200; }
+}
