@@ -165,3 +165,67 @@ export default function HotelDetail() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+//           {/* Unified search card */}
+//          
+//             
+//              
+//             </div>
+//             <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+//               <div>
+//                 <label className="label">From</label>
+//                 <input className="input" placeholder="Origin city or airport" />
+//               </div>
+//               <div>
+//                 <label className="label">To</label>
+//                 <input className="input" placeholder="Destination" />
+//               </div>
+//               <div>
+//                 <label className="label">Depart</label>
+//                 <input type="date" className="input" />
+//               </div>
+//               <div>
+//                 <label className="label">Travelers</label>
+//                 <input className="input" placeholder="1 adult" />
+//               </div>
+//             </div>
+//             <Link to="/flights" className="btn-accent mt-5 w-full sm:w-auto">
+//               Search flights
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Why choose us */}
+//       <section className="container-page py-20">
+//         <h2 className="font-display text-2xl text-indigo-900 dark:text-ivory sm:text-3xl">
+//           Why travelers book with Aerlume
+//         </h2>
+//         <div className="horizon-rule mt-3" />
+//         <div className="mt-10 grid gap-8 sm:grid-cols-3">
+//           {WHY_ITEMS.map((item) => (
+//             <div key={item.title}>
+//               <item.icon className="h-6 w-6 text-gold" aria-hidden="true" />
+//               <h3 className="mt-3 font-display text-lg text-indigo-900 dark:text-ivory">
+//                 {item.title}
+//               </h3>
+//               <p className="mt-1.5 text-sm text-muted dark:text-indigo-300">
+//                 {item.text}
+//               </p>
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }

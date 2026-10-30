@@ -1,4 +1,4 @@
-# Aerlume — Travel Booking Platform
+ # Aerlume — Travel Booking Platform
 
 Aerlume is a full-stack travel booking platform: search and book flights, hotels, and curated
 holiday packages against real managed inventory, pay securely through Stripe, and manage
